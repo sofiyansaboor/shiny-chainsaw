@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  jekyll:
+    image: jekyll/jekyll:4.4.1
+    command: >
+      bash -c "
+        bundle install &&
+        bundle exec jekyll serve --host 0.0.0.0 --port 8080 --livereload --livereload-port 35729 --force_polling
+      "
+    ports:
+      - 8080:8080
+      - 35729:35729
+    volumes:
+      - .:/srv/jekyll
+    environment:
+      - JEKYLL_ENV=development
+    working_dir: /srv/jekyll

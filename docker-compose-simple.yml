@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  jekyll:
+    image: jekyll/jekyll:4.4.1
+    command: jekyll serve --host 0.0.0.0 --port 8080 --livereload --livereload-port 35729
+    ports:
+      - 8080:8080
+      - 35729:35729
+    volumes:
+      - .:/srv/jekyll
+    environment:
+      - JEKYLL_ENV=development
+    user: "1000:100"

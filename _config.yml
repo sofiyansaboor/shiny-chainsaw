@@ -213,7 +213,7 @@ plugins:
   - jekyll-tabs
   - jekyll-terser
   - jekyll-toc
-  - jekyll-twitter-plugin
+  # - jekyll-twitter-plugin  # Temporarily disabled for local development
   - jemoji
 
 # Sitemap settings
